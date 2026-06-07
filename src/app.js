@@ -40,6 +40,12 @@ const navigation = [
     index: "05",
     color: "#fbda48",
   },
+  {
+    id: "content-editor",
+    label: { en: "Content\nEditor", ko: "콘텐츠\n에디터" },
+    index: "06",
+    color: "#ffddeb",
+  },
 ];
 
 const taxonomy = [
@@ -243,13 +249,14 @@ const sections = [
     navId: "nara-yoon",
     type: "hero",
     eyebrow: { en: "Nara Yoon", ko: "나라 윤" },
+    status: { en: "Work in Progress", ko: "Work in Progress" },
     title: {
       en: "To turn people and perspectives into compelling narratives.",
-      ko: "사람과 시선을 설득력 있는 내러티브로 전환하는 것.",
+      ko: "나라는 최고다!",
     },
     lead: {
-      en: "This is the main filing page for Nara Yoon. Each tab opens a different facet of the practice: artist, designer, community manager, project manager, creator, and contact.",
-      ko: "이곳은 나라 윤의 메인 파일링 페이지입니다. 각 탭은 아티스트, 디자이너, 커뮤니티 매니저, 프로젝트 매니저, 크리에이터라는 서로 다른 실천의 면을 엽니다.",
+      en: "This is the main filing page for Nara Yoon. Each tab opens a different facet of the practice: artist, designer, community manager, project manager, creator, content editor, and contact.",
+      ko: "이곳은 나라 윤의 메인 파일링 페이지입니다. 각 탭은 아티스트, 디자이너, 커뮤니티 매니저, 프로젝트 매니저, 크리에이터, 콘텐츠 에디터라는 서로 다른 실천의 면을 엽니다.",
     },
     note: {
       en: "Built like a portfolio document rather than a scrolling feed. Choose an index tab to open the corresponding section.",
@@ -368,6 +375,24 @@ const sections = [
       ko: "파편, 스틸 이미지, 그리고 2차 자료들.",
     },
     items: archiveItems,
+  },
+  {
+    id: "content-editor",
+    navId: "content-editor",
+    type: "text",
+    eyebrow: { en: "Content Editor", ko: "콘텐츠 에디터" },
+    title: {
+      en: "Editing stories into clear, memorable publishing formats.",
+      ko: "이야기를 명확하고 기억에 남는 발행 형식으로 편집합니다.",
+    },
+    body: {
+      en: "I shape raw ideas, references, and project material into content that can move across platforms while keeping a consistent tone, structure, and visual rhythm.",
+      ko: "날것의 아이디어와 레퍼런스, 프로젝트 자료를 일관된 톤과 구조, 비주얼 리듬을 유지하는 콘텐츠로 다듬어 여러 플랫폼에 맞게 전개합니다.",
+    },
+    aside: {
+      en: "Content planning, copy editing, editorial structure, platform storytelling.",
+      ko: "콘텐츠 기획, 카피 편집, 에디토리얼 구조, 플랫폼 스토리텔링.",
+    },
   },
 ];
 
@@ -523,6 +548,7 @@ const renderHero = (section) =>
       ${renderTaxonomy()}
       <div class="hero">
         <div class="hero__main">
+          ${section.status ? `<p class="hero__status">${localize(section.status)}</p>` : ""}
           <h1 class="hero__title">${localize(section.title)}</h1>
           <p class="hero__stamp">${activeLanguage === "en" ? "NOBODYS NARA / FILE 001" : "NOBODYS NARA / FILE 001"}</p>
         </div>
