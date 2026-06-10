@@ -20,13 +20,15 @@ img {
 }
 
 .home {
-  --hand-y: 0px;
+  --hand-x: 24.85%;
+  --hand-y: 12.75%;
   position: relative;
   width: 100vw;
   height: 100vh;
   min-height: 100svh;
   overflow: hidden;
   background: #e90013;
+  cursor: none;
 }
 
 .home__stage {
@@ -49,14 +51,12 @@ img {
 
 .home__hand {
   position: absolute;
-  left: 50.6%;
-  top: 12.6%;
-  width: 48.4%;
+  left: var(--hand-x);
+  top: var(--hand-y);
+  width: 78%;
   height: auto;
-  transform: translateY(var(--hand-y));
-  transition: transform 90ms ease-out;
   pointer-events: none;
-  z-index: 3;
+  z-index: 5;
 }
 
 .home__menu {
@@ -72,6 +72,7 @@ img {
   height: 3.6%;
   overflow: hidden;
   color: transparent;
+  cursor: none;
   text-indent: -999rem;
 }
 
@@ -115,8 +116,6 @@ img {
   }
 
   .home__hand {
-    left: 47%;
-    top: 16%;
-    width: 62%;
+    width: 96%;
   }
 }

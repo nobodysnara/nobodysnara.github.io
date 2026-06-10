@@ -26,13 +26,24 @@ app.innerHTML = `
 `;
 
 const home = document.querySelector(".home");
+const stage = document.querySelector(".home__stage");
+const hand = document.querySelector(".home__hand");
+
+const handTip = {
+  x: 479 / 1428,
+  y: 700 / 1287,
+};
 
 const moveHand = (event) => {
-  const rect = home.getBoundingClientRect();
-  const progress = (event.clientY - rect.top) / rect.height;
-  const offset = (progress - 0.5) * 120;
+  const stageRect = stage.getBoundingClientRect();
+  const handRect = hand.getBoundingClientRect();
+  const pointerX = event.clientX - stageRect.left;
+  const pointerY = event.clientY - stageRect.top;
+  const handX = pointerX - handRect.width * handTip.x;
+  const handY = pointerY - handRect.height * handTip.y;
 
-  home.style.setProperty("--hand-y", `${offset}px`);
+  home.style.setProperty("--hand-x", `${handX}px`);
+  home.style.setProperty("--hand-y", `${handY}px`);
 };
 
 home.addEventListener("pointermove", moveHand);
