@@ -44,6 +44,7 @@ app.innerHTML = `
 
 const home = document.querySelector(".home");
 const stage = document.querySelector(".home__stage");
+const instagramLink = document.querySelector(".home__instagram");
 
 const moveHand = (event) => {
   const stageRect = stage.getBoundingClientRect();
@@ -53,3 +54,8 @@ const moveHand = (event) => {
 };
 
 home.addEventListener("pointermove", moveHand);
+
+instagramLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.open(instagramLink.href, "_blank", "noopener,noreferrer");
+});

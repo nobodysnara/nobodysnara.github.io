@@ -66,11 +66,13 @@ img {
   left: 11.7%;
   top: 63.9%;
   width: 11.6%;
+  height: 20.622%;
   aspect-ratio: 1;
   border-radius: 50%;
   cursor: pointer;
   display: block;
-  z-index: 6;
+  pointer-events: auto;
+  z-index: 30;
 }
 
 .home__instagram:focus-visible {
@@ -175,6 +177,7 @@ img {
     left: 10.5%;
     top: 64.5%;
     width: 15%;
+    height: 26.667%;
   }
 
   .home__soon {
