@@ -6,7 +6,7 @@ html,
 body,
 #app {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
 }
 
 body {
@@ -20,6 +20,7 @@ img {
 }
 
 .home {
+  --hand-y: 0px;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -28,15 +29,94 @@ img {
   background: #e90013;
 }
 
+.home__stage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100vw, 177.7778vh);
+  aspect-ratio: 16 / 9;
+  transform: translate(-50%, -50%);
+}
+
 .home__image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center center;
+  object-fit: fill;
+  z-index: 1;
+}
+
+.home__hand {
+  position: absolute;
+  left: 50.6%;
+  top: 12.6%;
+  width: 48.4%;
+  height: auto;
+  transform: translateY(var(--hand-y));
+  transition: transform 90ms ease-out;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.home__menu {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.home__menu-link {
+  position: absolute;
+  left: 44.2%;
+  width: 11.8%;
+  height: 3.6%;
+  overflow: hidden;
+  color: transparent;
+  text-indent: -999rem;
+}
+
+.home__menu-link:focus-visible {
+  outline: 3px solid #111111;
+  outline-offset: 4px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.home__menu-link--artist {
+  top: 51.5%;
+}
+
+.home__menu-link--designer {
+  top: 56.7%;
+}
+
+.home__menu-link--content-editor {
+  top: 61.8%;
+}
+
+.home__menu-link--project-manager {
+  top: 67%;
+}
+
+.home__menu-link--community-builder {
+  top: 72.1%;
+}
+
+.blank-page {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100svh;
+  background: #e90013;
 }
 
 @media (max-aspect-ratio: 4 / 5) {
-  .home__image {
-    object-position: center top;
+  .home__stage {
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  .home__hand {
+    left: 47%;
+    top: 16%;
+    width: 62%;
   }
 }
