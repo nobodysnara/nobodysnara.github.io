@@ -20,8 +20,6 @@ img {
 }
 
 .home {
-  --hand-x: 24.85%;
-  --hand-y: 12.75%;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -32,6 +30,8 @@ img {
 }
 
 .home__stage {
+  --hand-tip-x: 51.4%;
+  --pointer-y: 47%;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -51,12 +51,15 @@ img {
 
 .home__hand {
   position: absolute;
-  left: var(--hand-x);
-  top: var(--hand-y);
-  width: 78%;
+  left: var(--hand-tip-x);
+  top: var(--pointer-y);
+  width: 68%;
   height: auto;
+  transform: translate(-18.1%, -63.1%);
   pointer-events: none;
   z-index: 5;
+  -webkit-mask-image: linear-gradient(90deg, #000 0 89%, rgba(0, 0, 0, 0.9) 93%, transparent 100%);
+  mask-image: linear-gradient(90deg, #000 0 89%, rgba(0, 0, 0, 0.9) 93%, transparent 100%);
 }
 
 .home__menu {
@@ -67,9 +70,9 @@ img {
 
 .home__menu-link {
   position: absolute;
-  left: 44.2%;
-  width: 11.8%;
-  height: 3.6%;
+  left: 42.4%;
+  width: 15.6%;
+  height: 4.2%;
   overflow: hidden;
   color: transparent;
   cursor: none;
@@ -83,23 +86,23 @@ img {
 }
 
 .home__menu-link--artist {
-  top: 51.5%;
+  top: 44.8%;
 }
 
 .home__menu-link--designer {
-  top: 56.7%;
+  top: 49.7%;
 }
 
 .home__menu-link--content-editor {
-  top: 61.8%;
+  top: 54.6%;
 }
 
 .home__menu-link--project-manager {
-  top: 67%;
+  top: 59.6%;
 }
 
 .home__menu-link--community-builder {
-  top: 72.1%;
+  top: 64.5%;
 }
 
 .blank-page {
@@ -116,6 +119,6 @@ img {
   }
 
   .home__hand {
-    width: 96%;
+    width: 82%;
   }
 }
