@@ -14,6 +14,19 @@ app.innerHTML = `
         alt=""
         aria-hidden="true"
       />
+      <a
+        class="home__instagram"
+        href="https://www.instagram.com/nobodysnara/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open Nobodys Nara Instagram"
+      >
+        <img
+          class="home__gimbap"
+          src="./Images/main/gimbap.png"
+          alt="Instagram"
+        />
+      </a>
       <nav class="home__menu" aria-label="Nara table menu">
         <a class="home__menu-link home__menu-link--artist" href="./artist.html">Artist</a>
         <a class="home__menu-link home__menu-link--designer" href="./designer.html">Designer</a>

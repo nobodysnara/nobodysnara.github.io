@@ -26,7 +26,6 @@ img {
   min-height: 100svh;
   overflow: hidden;
   background: #e90013;
-  cursor: none;
 }
 
 .home__stage {
@@ -62,6 +61,29 @@ img {
   mask-image: linear-gradient(90deg, #000 0 89%, rgba(0, 0, 0, 0.9) 93%, transparent 100%);
 }
 
+.home__instagram {
+  position: absolute;
+  left: 11.7%;
+  top: 63.9%;
+  width: 11.6%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.home__instagram:focus-visible {
+  outline: 3px solid #111111;
+  outline-offset: 6px;
+}
+
+.home__gimbap {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: spin-gimbap 24s linear infinite;
+  transform-origin: center;
+}
+
 .home__menu {
   position: absolute;
   inset: 0;
@@ -75,7 +97,6 @@ img {
   height: 4.2%;
   overflow: hidden;
   color: transparent;
-  cursor: none;
   text-indent: -999rem;
 }
 
@@ -112,6 +133,12 @@ img {
   background: #e90013;
 }
 
+@keyframes spin-gimbap {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-aspect-ratio: 4 / 5) {
   .home__stage {
     top: 0;
@@ -120,5 +147,11 @@ img {
 
   .home__hand {
     width: 82%;
+  }
+
+  .home__instagram {
+    left: 10.5%;
+    top: 64.5%;
+    width: 15%;
   }
 }
