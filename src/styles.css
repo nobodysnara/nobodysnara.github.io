@@ -84,6 +84,26 @@ img {
   transform-origin: center;
 }
 
+.home__soon {
+  position: absolute;
+  left: 10.7%;
+  top: 49.8%;
+  z-index: 4;
+  margin: 0;
+  color: #ffffff;
+  font-family: "Arial Rounded MT Bold", "Arial Black", Arial, sans-serif;
+  font-size: clamp(1.35rem, 1.35vw, 1.9rem);
+  font-weight: 900;
+  line-height: 1.33;
+  text-align: center;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.home__soon span {
+  display: block;
+}
+
 .home__menu {
   position: absolute;
   inset: 0;
@@ -153,5 +173,11 @@ img {
     left: 10.5%;
     top: 64.5%;
     width: 15%;
+  }
+
+  .home__soon {
+    left: 9%;
+    top: 49%;
+    font-size: clamp(1rem, 3.4vw, 1.35rem);
   }
 }

@@ -27,6 +27,10 @@ app.innerHTML = `
           alt="Instagram"
         />
       </a>
+      <p class="home__soon">
+        <span>(Still setting the table)</span>
+        <span>(More coming soon)</span>
+      </p>
       <nav class="home__menu" aria-label="Nara table menu">
         <a class="home__menu-link home__menu-link--artist" href="./artist.html">Artist</a>
         <a class="home__menu-link home__menu-link--designer" href="./designer.html">Designer</a>
