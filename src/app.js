@@ -55,7 +55,22 @@ const moveHand = (event) => {
 
 home.addEventListener("pointermove", moveHand);
 
-instagramLink.addEventListener("click", (event) => {
-  event.preventDefault();
-  window.open(instagramLink.href, "_blank", "noopener,noreferrer");
-});
+document.addEventListener(
+  "click",
+  (event) => {
+    const rect = instagramLink.getBoundingClientRect();
+    const isInsideInstagram =
+      event.clientX >= rect.left &&
+      event.clientX <= rect.right &&
+      event.clientY >= rect.top &&
+      event.clientY <= rect.bottom;
+
+    if (!isInsideInstagram) {
+      return;
+    }
+
+    event.preventDefault();
+    window.location.href = instagramLink.href;
+  },
+  true
+);
