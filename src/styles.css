@@ -68,7 +68,9 @@ img {
   width: 11.6%;
   aspect-ratio: 1;
   border-radius: 50%;
-  z-index: 4;
+  cursor: pointer;
+  display: block;
+  z-index: 6;
 }
 
 .home__instagram:focus-visible {
