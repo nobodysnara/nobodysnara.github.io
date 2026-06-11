@@ -167,34 +167,109 @@ img {
   background: #e90013;
 }
 
+.section-page {
+  min-height: 100dvh;
+  background: #e90013;
+  overflow: auto;
+}
+
+.section-page__main {
+  min-height: 100dvh;
+}
+
 .artist-gallery {
   min-height: 100dvh;
   padding: clamp(1rem, 3vw, 2.5rem);
 }
 
-.artist-gallery__home {
+.artist-header {
   position: fixed;
-  left: clamp(1rem, 3vw, 2rem);
   top: clamp(1rem, 3vw, 2rem);
-  z-index: 10;
-  color: #ffffff;
-  font-family: "ITC Avant Garde Gothic Pro", "Avant Garde", "Arial Black", Arial, sans-serif;
-  font-size: clamp(0.85rem, 1vw, 1rem);
-  font-weight: 900;
-  letter-spacing: 0;
-  text-decoration: none;
-  text-transform: uppercase;
+  left: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
+  z-index: 20;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  pointer-events: none;
 }
 
-.artist-gallery__home:focus-visible {
+.artist-header__logo {
+  display: block;
+  width: clamp(9rem, 16vw, 19rem);
+  pointer-events: auto;
+}
+
+.artist-header__logo img {
+  width: 100%;
+  height: auto;
+}
+
+.artist-header__logo:focus-visible,
+.artist-header__menu-button:focus-visible,
+.artist-header__nav a:focus-visible {
   outline: 3px solid #111111;
   outline-offset: 6px;
+}
+
+.artist-header__menu {
+  position: relative;
+  pointer-events: auto;
+}
+
+.artist-header__menu-button {
+  width: 2.65rem;
+  height: 2.65rem;
+  display: grid;
+  gap: 0.28rem;
+  align-content: center;
+  justify-items: center;
+  border: 2px solid #111111;
+  border-radius: 50%;
+  background: #0dff49;
+  cursor: pointer;
+  list-style: none;
+}
+
+.artist-header__menu-button::-webkit-details-marker {
+  display: none;
+}
+
+.artist-header__menu-button span {
+  width: 1.18rem;
+  height: 0.16rem;
+  border-radius: 999px;
+  background: #111111;
+}
+
+.artist-header__nav {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 0;
+  width: min(18rem, calc(100vw - 2rem));
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.85rem;
+  border: 2px solid #111111;
+  border-radius: 8px;
+  background: #0dff49;
+}
+
+.artist-header__nav a {
+  color: #111111;
+  font-family: "ITC Avant Garde Gothic Pro", "Avant Garde", "Arial Black", Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-align: center;
+  text-decoration: none;
 }
 
 .artist-gallery__works {
   width: min(100%, 92rem);
   margin: 0 auto;
-  padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(3rem, 6vw, 5rem);
+  padding: clamp(5rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
   display: grid;
   gap: clamp(2rem, 6vw, 5rem);
   justify-items: center;
@@ -247,14 +322,14 @@ img {
 
 @media (max-width: 760px) and (orientation: portrait) {
   .home__stage {
-    --stage-width: clamp(48rem, 210vw, 60rem);
-    --stage-left: clamp(22rem, 105vw, 30rem);
-    --stage-top: clamp(2.25rem, 8svh, 4.75rem);
-    --stage-transform: translateX(-50%);
+    --stage-width: max(100vw, calc(100svh * 16 / 9));
+    --stage-left: 50%;
+    --stage-top: 50%;
+    --stage-transform: translate(-50%, -50%);
   }
 
   .home__hand {
-    width: 72%;
+    width: 68%;
   }
 
   .home__instagram {
@@ -266,41 +341,6 @@ img {
 
   .home__soon {
     font-size: 0.95rem;
-  }
-
-  .home__menu {
-    inset: auto 0 max(0.75rem, env(safe-area-inset-bottom)) 0;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.5rem;
-    padding: 0 1rem;
-    pointer-events: none;
-  }
-
-  .home__menu-link {
-    position: static;
-    width: 100%;
-    min-height: 2.6rem;
-    height: auto;
-    display: grid;
-    place-items: center;
-    overflow: visible;
-    border: 2px solid #111111;
-    border-radius: 8px;
-    background: #ffffff;
-    color: #111111;
-    font-family: "ITC Avant Garde Gothic Pro", "Avant Garde", "Arial Black", Arial, sans-serif;
-    font-size: 0.78rem;
-    font-weight: 900;
-    line-height: 1.1;
-    text-align: center;
-    text-indent: 0;
-    text-decoration: none;
-    pointer-events: auto;
-  }
-
-  .home__menu-link--community-builder {
-    grid-column: 1 / -1;
   }
 }
 
@@ -328,17 +368,27 @@ img {
     padding: 0.875rem;
   }
 
-  .artist-gallery__home {
+  .artist-header {
     position: sticky;
-    display: inline-block;
+    top: 0;
     left: auto;
-    top: 0.875rem;
-    margin-bottom: 1.5rem;
+    right: auto;
+    padding: 0.875rem;
+    background: #e90013;
+  }
+
+  .artist-header__logo {
+    width: min(12rem, 58vw);
+  }
+
+  .artist-header__menu-button {
+    width: 2.45rem;
+    height: 2.45rem;
   }
 
   .artist-gallery__works {
-    padding: 0 0 2.5rem;
-    gap: 2.5rem;
+    padding: 1rem 0 2.5rem;
+    gap: 3rem;
   }
 
   .artist-gallery__image,
@@ -350,6 +400,9 @@ img {
   }
 
   .artist-gallery__caption {
-    font-size: 0.88rem;
+    max-width: 28rem;
+    margin-inline: auto;
+    font-size: 0.82rem;
+    line-height: 1.45;
   }
 }

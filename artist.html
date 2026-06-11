@@ -4,11 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Artist | Nara Yoon</title>
-    <link rel="stylesheet" href="./src/styles.css?v=20260611-artist-caption" />
+    <link rel="stylesheet" href="./src/styles.css?v=20260612-mobile-fix" />
   </head>
   <body class="artist-page">
+    <header class="artist-header">
+      <a class="artist-header__logo" href="./index.html" aria-label="Nara Yoon home">
+        <img src="./Images/NARAYOON.png" alt="Nara Yoon" />
+      </a>
+      <details class="artist-header__menu">
+        <summary class="artist-header__menu-button" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </summary>
+        <nav class="artist-header__nav" aria-label="Portfolio navigation">
+          <a href="./artist.html">Artist</a>
+          <a href="./designer.html">Designer</a>
+          <a href="./content-editor.html">Content Editor</a>
+          <a href="./project-manager.html">Project Manager</a>
+          <a href="./community-builder.html">Community Builder</a>
+        </nav>
+      </details>
+    </header>
     <main class="artist-gallery" aria-label="Nara Yoon artist portfolio">
-      <a class="artist-gallery__home" href="./index.html">Nara Yoon</a>
       <section class="artist-gallery__works" aria-label="Artist works">
         <figure class="artist-gallery__work">
           <img class="artist-gallery__image" src="./Images/Artist/artist-01.png?v=20260611" alt="Artist work 1" />
