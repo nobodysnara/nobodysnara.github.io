@@ -196,7 +196,7 @@ img {
 
 .artist-header__logo {
   display: block;
-  width: clamp(9rem, 16vw, 19rem);
+  width: clamp(4.5rem, 8vw, 9.5rem);
   pointer-events: auto;
 }
 
@@ -378,7 +378,7 @@ img {
   }
 
   .artist-header__logo {
-    width: min(12rem, 58vw);
+    width: min(6rem, 29vw);
   }
 
   .artist-header__menu-button {
