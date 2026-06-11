@@ -121,8 +121,8 @@ img {
 .home__menu-link {
   position: absolute;
   left: 42.4%;
-  width: 15.6%;
-  height: 4.2%;
+  width: 15.9%;
+  height: 3.65%;
   overflow: hidden;
   color: transparent;
   text-indent: -999rem;
@@ -135,23 +135,23 @@ img {
 }
 
 .home__menu-link--artist {
-  top: 44.8%;
+  top: 44.35%;
 }
 
 .home__menu-link--designer {
-  top: 49.7%;
+  top: 48.9%;
 }
 
 .home__menu-link--content-editor {
-  top: 54.6%;
+  top: 53.55%;
 }
 
 .home__menu-link--project-manager {
-  top: 59.6%;
+  top: 58.25%;
 }
 
 .home__menu-link--community-builder {
-  top: 64.5%;
+  top: 62.95%;
 }
 
 .home__mobile-card {
@@ -171,19 +171,36 @@ img {
   background: #e90013;
 }
 
+.artist-page,
 .section-page {
   min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   background: #e90013;
   overflow: auto;
 }
 
 .section-page__main {
-  min-height: 100dvh;
+  flex: 1;
+  min-height: calc(100dvh - 7rem);
 }
 
 .artist-gallery {
+  flex: 1;
   min-height: 100dvh;
   padding: clamp(1rem, 3vw, 2.5rem);
+}
+
+.site-footer {
+  width: 100%;
+  padding: 0 1rem clamp(1rem, 3vw, 2rem);
+  display: flex;
+  justify-content: center;
+}
+
+.site-footer img {
+  width: min(17.5rem, 78vw);
+  height: auto;
 }
 
 .artist-header {
@@ -446,10 +463,6 @@ img {
     animation: spin-gimbap 24s linear infinite;
   }
 
-  .home__mobile-footer-image {
-    width: min(100%, 17.5rem);
-    height: auto;
-  }
 }
 
 @media (min-width: 761px) and (max-aspect-ratio: 4 / 5) {

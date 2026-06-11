@@ -64,7 +64,6 @@ app.innerHTML = `
         >
           <img src="./Images/main/gimbap.png" alt="" aria-hidden="true" />
         </a>
-        <img class="home__mobile-footer-image" src="./Images/footer.png" alt="Let's create something meaningful together. nobodysnara@gmail.com. 320 Itaewon-dong, Seoul, South Korea." />
       </div>
     </section>
   </main>
