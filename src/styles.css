@@ -6,7 +6,7 @@ html,
 body,
 #app {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -22,7 +22,7 @@ img {
 .home {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   min-height: 100svh;
   overflow: hidden;
   background: #e90013;
@@ -31,10 +31,11 @@ img {
 .home__stage {
   --hand-tip-x: 51.4%;
   --pointer-y: 47%;
+  --stage-width: max(100vw, calc(100svh * 16 / 9));
   position: absolute;
   left: 50%;
   top: 50%;
-  width: max(100vw, 177.7778vh);
+  width: var(--stage-width);
   aspect-ratio: 16 / 9;
   transform: translate(-50%, -50%);
 }
@@ -152,7 +153,7 @@ img {
 
 .blank-page {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   min-height: 100svh;
   background: #e90013;
 }
@@ -163,26 +164,45 @@ img {
   }
 }
 
-@media (max-aspect-ratio: 4 / 5) {
+@media (max-width: 760px) and (orientation: portrait) {
   .home__stage {
-    top: 0;
+    --stage-width: min(120vw, calc(100svh * 16 / 9));
+    top: clamp(3rem, 12svh, 6rem);
     transform: translateX(-50%);
   }
 
   .home__hand {
-    width: 82%;
+    width: 68%;
   }
 
   .home__instagram {
-    left: 10.5%;
-    top: 64.5%;
-    width: 15%;
-    height: 26.667%;
+    left: 11.7%;
+    top: 63.9%;
+    width: 11.6%;
+    height: 20.622%;
   }
 
   .home__soon {
-    left: 9%;
-    top: 49%;
-    font-size: clamp(1rem, 3.4vw, 1.35rem);
+    left: 10.7%;
+    top: 49.8%;
+    font-size: clamp(0.55rem, 2.35vw, 1rem);
+  }
+}
+
+@media (min-width: 761px) and (max-aspect-ratio: 4 / 5) {
+  .home__stage {
+    --stage-width: min(132vw, calc(100svh * 16 / 9));
+    top: clamp(2rem, 8svh, 5rem);
+    transform: translateX(-50%);
+  }
+
+  .home__soon {
+    font-size: clamp(1rem, 2vw, 1.45rem);
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .home__soon {
+    font-size: clamp(0.85rem, 1.2vw, 1.2rem);
   }
 }

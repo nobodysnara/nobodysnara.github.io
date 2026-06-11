@@ -46,6 +46,12 @@ const home = document.querySelector(".home");
 const stage = document.querySelector(".home__stage");
 const instagramLink = document.querySelector(".home__instagram");
 
+const resetHandPosition = () => {
+  const stageRect = stage.getBoundingClientRect();
+
+  stage.style.setProperty("--pointer-y", `${stageRect.height * 0.47}px`);
+};
+
 const moveHand = (event) => {
   const stageRect = stage.getBoundingClientRect();
   const pointerY = event.clientY - stageRect.top;
@@ -53,7 +59,9 @@ const moveHand = (event) => {
   stage.style.setProperty("--pointer-y", `${pointerY}px`);
 };
 
+resetHandPosition();
 home.addEventListener("pointermove", moveHand);
+window.addEventListener("resize", resetHandPosition);
 
 document.addEventListener(
   "click",
