@@ -32,12 +32,15 @@ img {
   --hand-tip-x: 51.4%;
   --pointer-y: 47%;
   --stage-width: max(100vw, calc(100svh * 16 / 9));
+  --stage-left: 50%;
+  --stage-top: 50%;
+  --stage-transform: translate(-50%, -50%);
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: var(--stage-left);
+  top: var(--stage-top);
   width: var(--stage-width);
   aspect-ratio: 16 / 9;
-  transform: translate(-50%, -50%);
+  transform: var(--stage-transform);
 }
 
 .home__image {
@@ -158,6 +161,58 @@ img {
   background: #e90013;
 }
 
+.artist-page {
+  min-height: 100%;
+  overflow: auto;
+  background: #e90013;
+}
+
+.artist-gallery {
+  min-height: 100dvh;
+  padding: clamp(1rem, 3vw, 2.5rem);
+}
+
+.artist-gallery__home {
+  position: fixed;
+  left: clamp(1rem, 3vw, 2rem);
+  top: clamp(1rem, 3vw, 2rem);
+  z-index: 10;
+  color: #ffffff;
+  font-family: "ITC Avant Garde Gothic Pro", "Avant Garde", "Arial Black", Arial, sans-serif;
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.artist-gallery__home:focus-visible {
+  outline: 3px solid #111111;
+  outline-offset: 6px;
+}
+
+.artist-gallery__works {
+  width: min(100%, 92rem);
+  margin: 0 auto;
+  padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(3rem, 6vw, 5rem);
+  display: grid;
+  gap: clamp(2rem, 6vw, 5rem);
+  justify-items: center;
+}
+
+.artist-gallery__image {
+  width: min(100%, 72rem);
+  max-height: 92dvh;
+  height: auto;
+  object-fit: contain;
+}
+
+.artist-gallery__image:nth-child(4),
+.artist-gallery__image:nth-child(7),
+.artist-gallery__image:nth-child(8) {
+  width: min(100%, 92rem);
+}
+
 @keyframes spin-gimbap {
   to {
     transform: rotate(360deg);
@@ -166,13 +221,14 @@ img {
 
 @media (max-width: 760px) and (orientation: portrait) {
   .home__stage {
-    --stage-width: min(120vw, calc(100svh * 16 / 9));
-    top: clamp(3rem, 12svh, 6rem);
-    transform: translateX(-50%);
+    --stage-width: clamp(48rem, 210vw, 60rem);
+    --stage-left: clamp(22rem, 105vw, 30rem);
+    --stage-top: clamp(2.25rem, 8svh, 4.75rem);
+    --stage-transform: translateX(-50%);
   }
 
   .home__hand {
-    width: 68%;
+    width: 72%;
   }
 
   .home__instagram {
@@ -183,26 +239,87 @@ img {
   }
 
   .home__soon {
-    left: 10.7%;
-    top: 49.8%;
-    font-size: clamp(0.55rem, 2.35vw, 1rem);
+    font-size: 0.95rem;
+  }
+
+  .home__menu {
+    inset: auto 0 max(0.75rem, env(safe-area-inset-bottom)) 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    padding: 0 1rem;
+    pointer-events: none;
+  }
+
+  .home__menu-link {
+    position: static;
+    width: 100%;
+    min-height: 2.6rem;
+    height: auto;
+    display: grid;
+    place-items: center;
+    overflow: visible;
+    border: 2px solid #111111;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #111111;
+    font-family: "ITC Avant Garde Gothic Pro", "Avant Garde", "Arial Black", Arial, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: center;
+    text-indent: 0;
+    text-decoration: none;
+    pointer-events: auto;
+  }
+
+  .home__menu-link--community-builder {
+    grid-column: 1 / -1;
   }
 }
 
 @media (min-width: 761px) and (max-aspect-ratio: 4 / 5) {
   .home__stage {
-    --stage-width: min(132vw, calc(100svh * 16 / 9));
-    top: clamp(2rem, 8svh, 5rem);
-    transform: translateX(-50%);
+    --stage-width: clamp(64rem, 150vw, 86rem);
+    --stage-left: clamp(34rem, 70vw, 45rem);
+    --stage-top: clamp(2rem, 7svh, 5rem);
+    --stage-transform: translateX(-50%);
   }
 
   .home__soon {
-    font-size: clamp(1rem, 2vw, 1.45rem);
+    font-size: 1.35rem;
   }
 }
 
 @media (max-height: 520px) and (orientation: landscape) {
   .home__soon {
     font-size: clamp(0.85rem, 1.2vw, 1.2rem);
+  }
+}
+
+@media (max-width: 760px) {
+  .artist-gallery {
+    padding: 0.875rem;
+  }
+
+  .artist-gallery__home {
+    position: sticky;
+    display: inline-block;
+    left: auto;
+    top: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .artist-gallery__works {
+    padding: 0 0 2.5rem;
+    gap: 2.5rem;
+  }
+
+  .artist-gallery__image,
+  .artist-gallery__image:nth-child(4),
+  .artist-gallery__image:nth-child(7),
+  .artist-gallery__image:nth-child(8) {
+    width: 100%;
+    max-height: none;
   }
 }
