@@ -39,33 +39,6 @@ app.innerHTML = `
         <a class="home__menu-link home__menu-link--community-builder" href="./community-builder.html">Community Builder</a>
       </nav>
     </div>
-    <section class="home__mobile-card" aria-label="Nara table menu">
-      <img class="home__mobile-logo" src="./Images/NARAYOON.png" alt="Nara Yoon" />
-      <p class="home__mobile-intro">
-        Hi, I'm Nara.<br />
-        I turn ideas into stories,<br />
-        stories into experiences,<br />
-        and experiences into communities.
-      </p>
-      <nav class="home__mobile-menu" aria-label="Portfolio navigation">
-        <a href="./artist.html">Artist</a>
-        <a href="./designer.html">Designer</a>
-        <a href="./content-editor.html">Content Editor</a>
-        <a href="./project-manager.html">Project Manager</a>
-        <a href="./community-builder.html">Community Builder</a>
-      </nav>
-      <div class="home__mobile-footer">
-        <a
-          class="home__mobile-instagram"
-          href="https://www.instagram.com/nobodysnara/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open Nobodys Nara Instagram"
-        >
-          <img src="./Images/main/gimbap.png" alt="" aria-hidden="true" />
-        </a>
-      </div>
-    </section>
   </main>
 `;
 

@@ -122,7 +122,7 @@ img {
   position: absolute;
   left: 42.4%;
   width: 15.9%;
-  height: 3.65%;
+  height: 3.4%;
   overflow: hidden;
   color: transparent;
   text-indent: -999rem;
@@ -135,27 +135,23 @@ img {
 }
 
 .home__menu-link--artist {
-  top: 44.35%;
+  top: 43.5%;
 }
 
 .home__menu-link--designer {
-  top: 48.9%;
+  top: 48.05%;
 }
 
 .home__menu-link--content-editor {
-  top: 53.55%;
+  top: 52.7%;
 }
 
 .home__menu-link--project-manager {
-  top: 58.25%;
+  top: 57.4%;
 }
 
 .home__menu-link--community-builder {
-  top: 62.95%;
-}
-
-.home__mobile-card {
-  display: none;
+  top: 62.1%;
 }
 
 .blank-page {
@@ -342,139 +338,6 @@ img {
 @keyframes spin-gimbap {
   to {
     transform: rotate(360deg);
-  }
-}
-
-@media (max-width: 760px) and (orientation: portrait) {
-  .home {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    padding: 1rem;
-  }
-
-  .home__stage {
-    --stage-width: max(100vw, calc(100svh * 16 / 9));
-    --stage-left: 50%;
-    --stage-top: 50%;
-    --stage-transform: translate(-50%, -50%);
-  }
-
-  .home__stage::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 6;
-    background: rgba(233, 0, 19, 0.16);
-  }
-
-  .home__hand {
-    display: none;
-  }
-
-  .home__instagram {
-    display: none;
-  }
-
-  .home__soon {
-    display: none;
-  }
-
-  .home__menu {
-    display: none;
-  }
-
-  .home__mobile-card {
-    position: relative;
-    z-index: 40;
-    width: min(100%, 21.5rem);
-    max-height: calc(100svh - 2rem);
-    overflow: auto;
-    display: grid;
-    gap: 1.05rem;
-    padding: clamp(1.35rem, 5vw, 1.75rem);
-    background: #0dff49;
-    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.24);
-  }
-
-  .home__mobile-logo {
-    width: min(13rem, 72%);
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .home__mobile-intro {
-    margin: 0;
-    color: #111111;
-    font-family: "ITC Avant Garde Gothic Pro", "Avant Garde", "Arial Black", Arial, sans-serif;
-    font-size: 0.75rem;
-    font-weight: 900;
-    line-height: 1.2;
-    text-align: center;
-    letter-spacing: 0;
-  }
-
-  .home__mobile-intro {
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #111111;
-  }
-
-  .home__mobile-menu {
-    display: grid;
-    gap: 0.55rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #111111;
-  }
-
-  .home__mobile-menu a {
-    color: #111111;
-    font-family: "ITC Avant Garde Gothic Pro", "Avant Garde", "Arial Black", Arial, sans-serif;
-    font-size: clamp(1.15rem, 6vw, 1.75rem);
-    font-weight: 900;
-    line-height: 1.05;
-    text-align: center;
-    text-decoration: none;
-    letter-spacing: 0;
-  }
-
-  .home__mobile-menu a:focus-visible,
-  .home__mobile-instagram:focus-visible {
-    outline: 3px solid #111111;
-    outline-offset: 5px;
-  }
-
-  .home__mobile-footer {
-    display: grid;
-    gap: 0.65rem;
-    justify-items: center;
-  }
-
-  .home__mobile-instagram {
-    width: 3.25rem;
-    aspect-ratio: 1;
-    display: block;
-    border-radius: 50%;
-  }
-
-  .home__mobile-instagram img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    animation: spin-gimbap 24s linear infinite;
-  }
-
-}
-
-@media (min-width: 761px) and (max-aspect-ratio: 4 / 5) {
-  .home__stage {
-    --stage-width: clamp(64rem, 150vw, 86rem);
-    --stage-left: clamp(34rem, 70vw, 45rem);
-    --stage-top: clamp(2rem, 7svh, 5rem);
-    --stage-transform: translateX(-50%);
-  }
-
-  .home__soon {
-    font-size: 1.35rem;
   }
 }
 
